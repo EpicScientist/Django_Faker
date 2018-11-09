@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faker_Database</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1 align="center">Welcome</h1>
+        <br>
+        <h2>Here you can see your Fake Database!</h2>
+        <h3>All data create with FAKER!</h3>
+        <h4>All data stored and came from Django Database</h4>
+        <h3>WARNING: ALL DATA ARE FAKE!!!</h3>
+    </div>
+
+    {% if users %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">User Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Website</th>
+                <th scope="col">URL</th>
+                <th scope="col">Access Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <th>{{ user.user_name }}</th>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.website_name }}</td>
+                    <td>{{ user.website_url }}</td>
+                    <td>{{ user.access_date }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+</body>
+</html>
