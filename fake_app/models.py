@@ -8,3 +8,6 @@ class UserModel(models.Model):
     website_name = models.CharField(max_length=264, unique=True)
     website_url = models.URLField(unique=True)
     access_date = models.DateField()
+
+    def __str__(self):
+        return self.user_name
